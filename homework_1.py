@@ -21,23 +21,4 @@ def lst_gen(el_num):
 
 
 print(lst_gen(500))
-print(lst_gen.__doc__)
-
-
-
-
-def decorator(dec_arg1,dec_arg_2)
-    def outer(func):
-        def inner(*args,**kwargs):
-            do something with dec_arg1
-            return func(*args,**kwargs)
-            do something with dec_arg_2
-        return inner
-    return outer
-
-@decorator(dec_arg1,dec_arg_2)
-def main_func(arg):
-    do something with arg
-
-
 
