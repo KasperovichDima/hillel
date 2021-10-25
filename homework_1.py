@@ -5,7 +5,7 @@ def report(func):
     @wraps(func)
     def wrapper(*args,**kwargs):
         res=func(*args,**kwargs)
-        print(f'Function {func} completed successfully. List generated:')
+        print(f'Function {func.__name__} completed successfully. List generated:')
         return res
 
     return wrapper
