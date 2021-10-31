@@ -15,20 +15,13 @@ def handel_error(err):
     else:
         return jsonify({'errors':messages},err.code)
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 5d773cf448dccb054f31d383dd065e0ee143b2c1
 @app.route('/')
 @use_kwargs(
     {
         'currency':fields.Str(
             missing='USD',
-<<<<<<< HEAD
             validate=[lambda currency: currency in valid_list()]
-=======
-            validate=[lambda currency: currency in curr_list()]
->>>>>>> 5d773cf448dccb054f31d383dd065e0ee143b2c1
         )
     },
     location='query'
