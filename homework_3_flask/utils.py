@@ -14,16 +14,15 @@ def bitcoin_rate(currency):
                    f'<h3>in {curr_name} is:</h3>' \
                    f'<h2>{curr_rate} {currency}</h2>' \
                    f'<h3>for 1 Bitcoin</h3>'
-        else:continue
 
 
-def curr_list():
+def valid_list():
     """
     returns a list of currency(code) for query validation
     """
-    currency_lst = []
+    validation_lst = []
     data = get('https://bitpay.com/api/rates').json()
     for currency in data:
-        currency_lst.append(currency['code'])
-    return currency_lst
+        validation_lst.append(currency['code'])
+    return validation_lst
 

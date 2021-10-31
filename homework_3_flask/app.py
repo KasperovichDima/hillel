@@ -1,7 +1,7 @@
 from flask import Flask,jsonify
 from webargs import fields
 from webargs.flaskparser import use_kwargs
-from utils import bitcoin_rate, curr_list
+from utils import bitcoin_rate, valid_list
 
 app = Flask(__name__)
 
@@ -15,14 +15,13 @@ def handel_error(err):
     else:
         return jsonify({'errors':messages},err.code)
 
-curr_list=curr_list()
 
 @app.route('/')
 @use_kwargs(
     {
         'currency':fields.Str(
             missing='USD',
-            validate=[lambda currency: currency in curr_list]
+            validate=[lambda currency: currency in valid_list()]
         )
     },
     location='query'
