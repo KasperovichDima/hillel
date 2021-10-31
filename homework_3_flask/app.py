@@ -21,7 +21,7 @@ def handel_error(err):
     {
         'currency':fields.Str(
             missing='USD',
-            validate=[lambda currency: currency in valid_list()]
+            validate=[lambda currency: currency.upper() in valid_list()]
         )
     },
     location='query'

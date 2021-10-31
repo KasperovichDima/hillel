@@ -7,12 +7,12 @@ def bitcoin_rate(currency):
     """
     data = get('https://bitpay.com/api/rates').json()
     for curr in data:
-        if curr['code']==currency:
+        if curr['code']==currency.upper():
             curr_name=curr['name']
             curr_rate=curr['rate']
             return f'<h1>Bitcoin rate</h1>' \
                    f'<h3>in {curr_name} is:</h3>' \
-                   f'<h2>{curr_rate} {currency}</h2>' \
+                   f'<h2>{curr_rate} {currency.upper()}</h2>' \
                    f'<h3>for 1 Bitcoin</h3>'
 
 
