@@ -1,4 +1,5 @@
 #BITCOIN APP
+#By Dima Kasperovich
 
 from flask import Flask,jsonify
 from webargs import fields
