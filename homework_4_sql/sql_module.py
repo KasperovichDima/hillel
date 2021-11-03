@@ -13,7 +13,7 @@ def tracks_count():
     db.commit()
     db.close()
 
-    return res
+    return res[0]
 
 
 def unique_name():
@@ -27,4 +27,4 @@ def unique_name():
     db.commit()
     db.close()
 
-    return res
+    return res[0]
