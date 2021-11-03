@@ -21,10 +21,10 @@ def unique_name():
     db = sqlite3.connect(db_path)
     cursor = db.cursor()
 
-    cursor.execute('''SELECT count(DISTINCT FirstName) FROM customers;''')
-    res=(cursor.fetchone())
+    cursor.execute('''SELECT DISTINCT FirstName FROM customers;''')
+    res=(cursor.fetchall())
 
     db.commit()
     db.close()
 
-    return res[0]
+    return res
