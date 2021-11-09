@@ -20,7 +20,10 @@ def tracks_length_by_genres():
     for GenreId, Milliseconds in cursor.fetchall():
         result_dict[GenreId][1] += Milliseconds
 
+    db.close()
     return result_dict
+
+
 
 
 def top_sale_tracks(count):
@@ -41,6 +44,8 @@ def top_sale_tracks(count):
                        FROM invoice_items;''')
     for TrackId, UnitPrice, Quantity in cursor.fetchall():
         id_name_sum_dict[TrackId][1] += UnitPrice * Quantity
+
+    db.close()
 
     result_unsorted = [tpl[1] for tpl in id_name_sum_dict.items()]
 
