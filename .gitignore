@@ -10,4 +10,10 @@
 /homework_4_sql/test.py
 /homework_4_sql/example.db
 /homework_4_sql/venv/
-homework_4_sql/__pycache__/
+/homework_4_sql/__pycache__/
+
+/homework_6,7_sql/example.db
+/homework_6,7_sql/.idea
+/homework_6,7_sql/__pycache__
+/homework_6,7_sql/test.py
+/homework_6,7_sql/venv/
