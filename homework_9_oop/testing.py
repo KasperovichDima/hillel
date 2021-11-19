@@ -16,6 +16,7 @@ print(f'p4 coordinates {p4.get_coordinates()}')
 t1 = classes.Triangle(-11, 25, -86, 39, 47, 2)
 print(f'Triangle area: {t1.get_area()}')
 print(f'Triangle perimeter: {t1.get_perimeter()}')
+print(f'Original b-apex coordinates: {t1.b.get_coordinates()}')
 t1.set_apex('b', 12, 11)
-# print(t1.a.get_coordinates())
+print(f'New b-apex coordinates: {t1.b.get_coordinates()}')
 

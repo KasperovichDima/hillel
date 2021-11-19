@@ -7,16 +7,20 @@ class Point:
     def __add__(self, other):
         if isinstance(other, Point):
             return Point(self._x + other._x, self._y + other._y)
+        else:
+            raise AttributeError(f'only point + point supported')
 
     def __sub__(self, other):
         if isinstance(other, Point):
             return Point(self._x - other._x, self._y - other._y)
+        else:
+            raise AttributeError(f'only point - point supported')
 
     @staticmethod
     def int_validator(*args):
         for arg in args:
             if type(arg) != int:
-                raise AttributeError('Wrong coordinates')
+                raise AttributeError(f'Wrong coordinate {arg}')
         return True
 
     def _change_position(self, x, y):
@@ -40,19 +44,23 @@ class Triangle:
             self.c = Point(cx, cy)
 
     def _get_points(self):
+        """
+        Some methods need apex coordinates
+        :return: x and y for each apex
+        """
         (ax, ay), (bx, by), (cx, cy) = (point.get_coordinates() for point in self.__dict__.values())
         return ax, ay, bx, by, cx, cy
 
     def get_area(self):
         ax, ay, bx, by, cx, cy = self._get_points()
-        return abs(((ax-cx)*(by-cy)-(bx-cx)*(ay-cy))*0.5)
+        return abs(((ax - cx) * (by - cy) - (bx - cx) * (ay - cy)) * 0.5)
 
     def get_perimeter(self):
         ax, ay, bx, by, cx, cy = self._get_points()
         a = ((bx - ax) ** 2 + (by - ay) ** 2) ** 0.5
         b = ((cx - bx) ** 2 + (cy - by) ** 2) ** 0.5
         c = ((cx - ax) ** 2 + (cy - ay) ** 2) ** 0.5
-        return round(a+b+c, 2)
+        return round(a + b + c, 2)
 
     def set_apex(self, apex, x, y):
         """
